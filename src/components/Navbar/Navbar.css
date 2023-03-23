@@ -1,0 +1,32 @@
+.conteinerNavbar {
+    background-color: #EF0896;
+    
+}
+
+.navbarLogo {
+    height: 15em;
+    width: 15em;
+    margin-top: 1.2em;
+}
+
+.navbarNav {
+    padding: 1rem;
+}
+
+.navbarNav li {
+    background-position: 0% 100%;
+    background-size: 0% 2px;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    line-height: 2rem;
+    color: white;
+    
+}
+
+.navbarNav button {
+    color: white;
+    background-color: #EF0896;
+    font-size: 1.7rem;
+    font-weight: 800;
+    border-style: none;
+}
