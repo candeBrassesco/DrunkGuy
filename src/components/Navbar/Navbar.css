@@ -4,8 +4,8 @@
 }
 
 .navbarLogo {
-    height: 15em;
-    width: 15em;
+    height: 18em;
+    width: 18em;
     margin-top: 1.2em;
 }
 
@@ -16,17 +16,16 @@
 .navbarNav li {
     background-position: 0% 100%;
     background-size: 0% 2px;
-    text-transform: uppercase;
     padding: 1.5rem;
     line-height: 2rem;
-    color: white;
-    
 }
 
 .navbarNav button {
-    color: white;
+    color: whitesmoke;
     background-color: #EF0896;
-    font-size: 1.7rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 600;
     border-style: none;
+    text-transform: uppercase;
+
 }

@@ -1,0 +1,39 @@
+.contador {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5em;
+}
+
+.controlBoton {
+    font-size: 1em;
+    width: 1.5em;
+    text-align: center;
+    padding: 2px;
+}
+
+.controlNumero {
+    background-color: white;
+    font-size: 1.5em;
+    text-align: center;
+    width: 2em;
+    margin-top: 0.3em;
+}
+
+.controlAgregar {
+    font-size: 1.2em;
+    padding: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.contadorControles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 5em;
+}
