@@ -5,17 +5,23 @@
     align-items: center;
     justify-content: space-evenly;
     height: 5em;
+    width: 8em;
+}
+
+.contador button {
+    background-color: grey;
 }
 
 .controlBoton {
-    font-size: 1em;
+    font-size: 1.3em;
+    font-weight: 800;
     width: 1.5em;
     text-align: center;
     padding: 2px;
 }
 
 .controlNumero {
-    background-color: white;
+    background-color: darkgrey;
     font-size: 1.5em;
     text-align: center;
     width: 2em;
@@ -23,10 +29,12 @@
 }
 
 .controlAgregar {
-    font-size: 1.2em;
-    padding: 1rem;
+    font-size: 1.5em;
+    text-align: center;
     font-weight: 400;
     border-radius: 5px;
+    width: 100%;
+    height: 2em;
 }
 .contadorControles {
     display: flex;
@@ -35,5 +43,5 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 5em;
+    height: 6em;
 }

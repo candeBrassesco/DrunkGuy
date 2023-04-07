@@ -1,9 +1,9 @@
 .itemList {
-    background-color: #EB0D56;
+    background-image: url(./assets/fondopixel.png);
+    background-size: cover;
+    background-repeat: repeat;
     height: 30em;
-    width: 80%;
-    margin-top: 5em;
-    margin-left: 10%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center ;
