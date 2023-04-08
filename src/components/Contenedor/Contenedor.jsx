@@ -1,3 +1,4 @@
+import './Contenedor.css'
 import { useEffect, useState } from "react"
 import { mockFecht } from "../../utils/mockFetch"
 
