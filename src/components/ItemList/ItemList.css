@@ -1,0 +1,11 @@
+.listGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 45em;
+    margin-top: 1em;
+}

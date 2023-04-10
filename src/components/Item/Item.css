@@ -1,16 +1,35 @@
-.cardItem {
-    width: 18rem;
+.itemCard {
+    width: 15em;
+    height: 21em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.marcoImg {
-    position: absolute;
-    z-index: -1;
-    width: 18rem;
+.itemImg {
+    width: 10em ;
+    height: 10em;
+    margin-top: 1em;
 }
 
-.productoImg {
-    position: absolute;
-    z-index: 1;
-    width: 5em ;
-    height: 7em;
+.itemBody h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.itemBody p {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.itemBotonDetalle {
+    background-color: #878CBB;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: 0.5em;
+    margin-bottom: 1em;
 }

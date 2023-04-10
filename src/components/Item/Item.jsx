@@ -1,18 +1,16 @@
 import './Item.css'
-import marco from './assets/marco.png'
 
-const Item = ({ id, nombre, precio, img }) => {
+const Item = ({ producto }) => {
 
 
     return (
-        <div className="card itemCard">
-            <img src={img} className="card-img-top productoImg" alt={nombre}/>
-            <img src={marco} className="card-img-top marcoImg" alt="marco"/>
-            <div className="card-body cardDatos">
-               <p className="card-text cardNombre">{nombre}</p>
-               <p className="card-text cardPrecio">{precio}</p>
+        <div  className="card itemCard">
+            <img src={producto.img} alt={producto.nombre} className="itemImg"/>
+            <div className="card-body itemBody">
+                <h3 className="card-title">{producto.nombre}</h3>
+                <p className="card-text">{producto.precio}</p>
             </div>
-            <button className="cardBotonDetalle">Ver detalle</button>
+            <button className="itemBotonDetalle">Ver detalle</button>
         </div>
     )
 }
