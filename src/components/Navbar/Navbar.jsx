@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from './assets/logo.png'
 import CartWidget from '../CartWidget/CartWidget'
 import './Navbar.css'
@@ -16,10 +16,18 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="listaDeLinks" className="navbar-nav mx-auto mb-2 mb-lg-0">
-                       <li><button>Home</button></li>
-                       <li><button>Drinks</button></li>
-                       <li><button>About Us</button></li>
-                       <CartWidget />  
+                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/'>
+                          <li>Home</li>
+                       </NavLink>
+                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/:pid:1'> 
+                          <li>Drinks</li>
+                       </NavLink>
+                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/:pid:2'>
+                          <li>About Us</li>
+                       </NavLink>
+                       <NavLink to='/'>
+                          <CartWidget />
+                       </NavLink>   
                     </ul>     
                 </div>
             </div>   
