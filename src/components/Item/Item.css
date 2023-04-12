@@ -6,12 +6,17 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
+    background-color: rgba(2, 0, 0, 0.3);
 }
 
 .itemImg {
     width: 10em ;
     height: 10em;
     margin-top: 1em;
+}
+
+.itemBody {
+    color: #b5b9cf;
 }
 
 .itemBody h3 {

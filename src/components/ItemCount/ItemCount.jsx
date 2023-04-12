@@ -1,20 +1,10 @@
+import { useCount } from '../../hooks/useCount'
 import './ItemCount.css'
-import { useState } from 'react'
 
 const ItemCount = ({ stock, inicio, onAdd }) => {
-    const [cantidad, setQuantity] = useState(inicio)
-
-    const increment = () => {
-        if (cantidad < stock) {
-            setQuantity(cantidad + 1)
-        }
-    }
-
-    const decrement = () => {
-        if (cantidad > 1) {
-            setQuantity(cantidad - 1)
-        }
-    }
+    
+    const { cantidad, increment, decrement, handleOnAdd } = useCount(inicio, stock, onAdd)
+ 
     return (
         <div className="conteiner__fluid contador">
            <div className="contadorControles">
@@ -23,7 +13,7 @@ const ItemCount = ({ stock, inicio, onAdd }) => {
                 <button className="controlBoton" onClick={increment}> + </button>
            </div>
            <div className="contadorControles">
-                <button className="controlAgregar" onClick= {() =>onAdd(cantidad)} disabled={!stock}>
+                <button className="controlAgregar" onClick= {handleOnAdd} disabled={!stock}>
                     Add Cart
                 </button>
            </div> 

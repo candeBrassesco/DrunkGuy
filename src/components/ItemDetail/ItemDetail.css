@@ -1,0 +1,36 @@
+.detailContainer {
+    width: 70%;
+    height:32em;
+    background-color: rgba(2, 0, 0, 0.3);
+    text-align: center;
+}
+
+.detailImg {
+    margin-top: 1.5em;
+    
+}
+
+.detailBodyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detailBody h3 {
+    font-size: 3em;
+    font-weight: 600;
+    color: #d1d3e0;
+    margin-top: 0.5em;
+}
+
+.detailBody p {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #a3a5af;
+}
+
+.detailBody h4 {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #a3a5af;
+}

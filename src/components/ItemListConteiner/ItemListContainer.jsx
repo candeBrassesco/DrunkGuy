@@ -19,7 +19,6 @@ const ItemListContainer = () =>{
     return (
        <div className="container__fluid itemList">
            < ItemList productos={productos} />
-           < ItemCount inicio={1} stock={7} onAdd={(cantidad) => alert('Cantidad agregada al carrito: ', cantidad)}/>
        </div> 
     )
 }

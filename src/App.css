@@ -7,4 +7,7 @@
 body {
   font-family: 'VT323', monospace;
   background-color: black;
+  background-image: url(./assets/fondopixel.png);
+  background-size: cover;
+  background-repeat:repeat;
 }
