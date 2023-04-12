@@ -19,10 +19,11 @@ const Navbar = () => {
                        <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/'>
                           <li>Home</li>
                        </NavLink>
-                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/:pid:1'> 
+                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/precio/$4200'> 
+                       {/* el link drinks llevará a un listado de aquellas bebidas que salgan $4200*/}
                           <li>Drinks</li>
                        </NavLink>
-                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/:pid:2'>
+                       <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/2'>
                           <li>About Us</li>
                        </NavLink>
                        <NavLink to='/'>

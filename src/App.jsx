@@ -11,6 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={ <ItemListContainer /> } />
+        <Route path='/precio/:ppr' element={ <ItemListContainer /> } />
         <Route path='/detail/:pid' element={ <ItemDetailContainer /> } />
         <Route path='*' element={ <Navigate  to='/' /> } />
       </Routes>
