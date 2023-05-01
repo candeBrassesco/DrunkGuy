@@ -1,12 +1,14 @@
 .detailContainer {
     width: 70%;
-    height:32em;
+    height:35em;
     background-color: rgba(2, 0, 0, 0.3);
     text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
 }
 
 .detailImg {
-    margin-top: 1.5em;
+    margin-top: 2em;
     
 }
 
@@ -24,7 +26,7 @@
 }
 
 .detailBody p {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 400;
     color: #a3a5af;
 }
@@ -33,4 +35,34 @@
     font-size: 1.8em;
     font-weight: 400;
     color: #a3a5af;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 10em;
+}
+
+.opcion1 {
+    padding: 0.6em;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 400;
+    color: black;
+    background-color: #878CBB ;
+    border-radius: 5px;     
+}
+
+.opcion2 {
+    padding: 0.6em;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: 400;
+    color: black;
+    background-color: #878CBB ;
+    border-radius: 5px;     
 }
