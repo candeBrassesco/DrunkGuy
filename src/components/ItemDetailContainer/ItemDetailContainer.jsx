@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { mockFecht } from "../../utils/mockFetch"
-import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom"
+import LoadingComponent from "../LoadingComponent/LoadingComponent"
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({})
+
+    const [isLoading, setIsLoading] = useState(true)
 
     const {pid} = useParams()
 
@@ -13,12 +16,20 @@ const ItemDetailContainer = () => {
         mockFecht(pid)
         .then(resp => setProduct(resp))
         .catch(err => console.log(err))
+        .finally(()=>setIsLoading(false))
     }, [])
 
     return (
-    <div className="itemDetailContainer">
-        <ItemDetail product={product}/>
-    </div>
+        <>
+        {
+            isLoading ?
+               <LoadingComponent />
+            :
+            <div className="itemDetailContainer">
+               <ItemDetail product={product}/>
+            </div>
+        }
+       </>
     )
 }
 

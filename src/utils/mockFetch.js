@@ -39,6 +39,6 @@ export let mockFecht = (id) => {
     return new Promise ((res,rej) => {
         setTimeout (() => {
             res(id ? productos.find(prod => prod.id == id): productos)
-        },500)
+        },3000)
     })
 }
