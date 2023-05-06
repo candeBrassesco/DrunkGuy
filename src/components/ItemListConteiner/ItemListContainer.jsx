@@ -8,13 +8,13 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () =>{
     const [productos, setProductos] = useState ([])
-    const {ppr} = useParams()
+    const {pca} = useParams()
 
     useEffect(() => {
         
-        if (ppr) {
+        if (pca) {
             mockFecht()
-            .then(resp => {setProductos(resp.filter(prod => prod.precio == ppr))})
+            .then(resp => {setProductos(resp.filter(prod => prod.categoria == pca))})
             .catch(err => {console.log(err)}) 
         } else {
             mockFecht()
@@ -22,7 +22,7 @@ const ItemListContainer = () =>{
             .catch(err => {console.log(err)})
         }
 
-    },[ppr])
+    },[pca])
 
     console.log(productos)
 

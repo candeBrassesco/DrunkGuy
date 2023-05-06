@@ -1,18 +1,22 @@
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import './ItemDetail.css'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
+import './ItemDetail.css'
 
 const ItemDetail = ({product}) => {
-    console.log(product)
+
+    const { agregarAlCart, cartList } = useCartContext()
 
     const [quantityAdded, setQuantityAdded] = useState(0)
 
-
     const handleOnAdd = (cantidad) => {
         setQuantityAdded(cantidad)
-        alert(`Cantidad agregada al carrito: ${cantidad}`)
+        agregarAlCart({ ... product, quantity: cantidad })
+        console.log(`Cantidad agregada al carrito: ${cantidad}`)
     }
+
+    console.log(cartList)
 
     return (
         <div className="card detailContainer">
@@ -27,14 +31,14 @@ const ItemDetail = ({product}) => {
                         <p className="card-text bodyGraduacion">{product.graduacion}</p>
                         <p className="card-text bodyMedida">{product.medida}</p>
                         <p className="card-text bodyStock">Stock disponible: {product.stock}</p>
-                        <h4 className="card-text bodyPrecio">{product.precio}</h4>
+                        <h4 className="card-text bodyPrecio">${product.precio}</h4>
                     </div>
                     <div>
                         {
                             quantityAdded > 0 ? (
                                 <div className="opciones">
-                                    <Link to='/cart' className="opcion1"> Ir al carrito </Link>
-                                    <Link to='/' className="opcion2"> Seguir comprando </Link>
+                                    <Link to='/cart' className="opcion1"> Pay the bill </Link>
+                                    <Link to='/' className="opcion2"> ¡Keep drinking! </Link>
                                 </div>
                             ) : (
                                 < ItemCount inicio={1} stock={product.stock} onAdd={handleOnAdd}/>
