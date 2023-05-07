@@ -19,24 +19,47 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState ([])
 
     const agregarAlCart = (newProduct) => {
-        // los ... son por si ya tenía algo en el cartList
-        setCartList([
-            ... cartList,
-            newProduct
-        ])
-    }
+        
+        const indexProduct = cartList.findIndex(product => product.id == newProduct.id)
 
+        if (indexProduct == -1) {
+            setCartList([
+                ... cartList,
+                newProduct
+            ])
+        } else {
+            cartList[indexProduct].quantity += newProduct.quantity
+            setCartList([ ... cartList])
+        }
+        
+    }
+ 
+    //función para vaciar carrito
     const vaciarCarrito = () => {
         setCartList([])
     }
 
+   //función para calcular la cantidad total de productos en el cart
+   const cantidadTotal = () => cartList.reduce((cantidadTotal, objProducto) => cantidadTotal += objProducto.quantity, 0)
 
+   //función para calcular el precio total
+   const precioTotal = () => {
+       return cartList.reduce ((precioTotal, objProducto) => precioTotal += (objProducto.quantity * objProducto.precio), 0)
+   }
+
+   //función para eliminar por item
+   const eliminarProducto = (pid) => {
+          setCartList(cartList.filter(product => product.id !== pid ))
+   }
 
     return (
        <CartContext.Provider value={{
            cartList,
            agregarAlCart,
-           vaciarCarrito
+           vaciarCarrito,
+           cantidadTotal,
+           precioTotal,
+           eliminarProducto
        }}>  
            {children}
        </CartContext.Provider>

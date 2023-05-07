@@ -36,21 +36,15 @@ const Navbar = () => {
                                <NavLink className={({isActive}) => isActive ? "linkActivado2" : "linkDesactivado2"} to='/categoria/licores'>
                                    <li>Licores</li>
                                </NavLink>
-                               <NavLink className={({isActive}) => isActive ? "linkActivado2" : "linkDesactivado2"} to='/categoria/tequila'>
-                                   <li>Tequila</li>
-                               </NavLink>
                                <NavLink className={({isActive}) => isActive ? "linkActivado2" : "linkDesactivado2"} to='/categoria/vodka'>
                                    <li>Vodka</li>
-                               </NavLink>
-                               <NavLink className={({isActive}) => isActive ? "linkActivado2" : "linkDesactivado2"} to='/categoria/whisky'>
-                                   <li>Whisky</li>
                                </NavLink>
                            </ul>
                        </div>
                        <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/detail/2'>
                           <li>About Us</li>
                        </NavLink>
-                       <NavLink to='/cart'>
+                       <NavLink className="linkCart" to='/cart'>
                           <CartWidget />
                        </NavLink>   
                     </ul>     
