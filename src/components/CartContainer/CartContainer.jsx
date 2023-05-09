@@ -1,10 +1,31 @@
 import { useCartContext } from "../../context/CartContext"
 import { Link } from 'react-router-dom'
 import './CartContainer.css'
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 
 const CartContainer = () => {
    const {cartList, vaciarCarrito, precioTotal, eliminarProducto } = useCartContext()
    console.log(cartList)
+
+const handleSubmit = () => {
+    const order={
+    buyer: {nombre:'', tel:'', email:''}, 
+    items: cartList.map(({id, nombre, precio})=>({id, nombre, precio})),
+    total: precioTotal()
+}
+    const db = getFirestore()
+    const queryCollection = collection(db,'orders')
+
+    addDoc(queryCollection, order)
+    .then(resp => console.log(resp.id))
+    .catch(err => console.log(err))
+    .finally(()=>{
+        console.log('terminó la promesa')
+        vaciarCarrito()
+    })
+        
+    console.log('enviando orden:', order)
+}
 
     return (
         cartList.length == 0 ?
@@ -41,6 +62,7 @@ const CartContainer = () => {
                         <h2>precio total: ${precioTotal()}</h2>
                     </div>
                     <button className="cartClean" onClick={vaciarCarrito}> Clean Cart </button>
+                    <button className="cartFinish" onClick={handleSubmit}> Leave the bar </button>
                 </div>
             </div>
     )

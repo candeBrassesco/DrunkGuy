@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import ItemList from '../ItemList/ItemList'
 import { mockFecht } from '../../utils/mockFetch'
-import './ItemListContainer.css'
 import { useParams } from 'react-router-dom'
 import LoadingComponent from '../LoadingComponent/LoadingComponent'
+import './ItemListContainer.css'
 
 
 const ItemListContainer = () =>{
@@ -14,20 +14,29 @@ const ItemListContainer = () =>{
 
     const {pca} = useParams()
 
+
     useEffect(() => {
-        
+        const db = getFirestore()
+
+        const queryCollection = collection(db, 'productos')
+
         if (pca) {
-            mockFecht()
-            .then(resp => {setProductos(resp.filter(prod => prod.categoria == pca))})
+            const queryFilter = query(
+                queryCollection, 
+                where('categoria','==',pca))
+    
+            getDocs(queryFilter)
+            .then(resp => setProductos(resp.docs.map(producto => ({id: producto.id, ...producto.data()}))))
             .catch(err => {console.log(err)})
             .finally(()=> setIsLoading(false)) 
+
         } else {
-            mockFecht()
-            .then(resp => {setProductos(resp)})
+            getDocs(queryCollection)
+            .then(resp => setProductos(resp.docs.map(producto => ({id: producto.id, ...producto.data()}))))
             .catch(err => {console.log(err)})
             .finally(()=> setIsLoading(false)) 
         }
-
+       
     },[pca])
 
     console.log(productos)

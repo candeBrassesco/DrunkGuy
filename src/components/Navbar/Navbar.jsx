@@ -17,11 +17,11 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="listaDeLinks" className="navbar-nav mx-auto mb-2 mb-lg-0">
                        <NavLink className={({isActive}) => isActive ? "linkActivado" : "linkDesactivado"} to='/'>
-                          <li>Home</li>
+                          <li>Drinks</li>
                        </NavLink>
                        <div className="dropdown">
                            <button className="dropdown-toggle linkDesactivado linkActivado" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Drinks
+                                Choose a drink
                            </button>
                            <ul className="dropdown-menu drinksDropdown" aria-labelledby="dropdownMenuButton1">
                                <NavLink className={({isActive}) => isActive ? "linkActivado2" : "linkDesactivado2"} to='/categoria/aguardiente'>
