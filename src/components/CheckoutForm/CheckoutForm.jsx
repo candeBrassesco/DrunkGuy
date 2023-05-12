@@ -1,48 +1,49 @@
 import { useState } from 'react'
 import './CheckoutForm.css'
 
-const CheckoutForm = ( { onConfirm } ) => {
-const [name, setName] = useState('')
-const [phone, setPhone] = useState('')
-const [email, setEmail] = useState('')
+const CheckoutForm = ( { handleSubmit } ) => {
+const [formData, setFormData] = useState ({
+    name:'',
+    phone:'', 
+    email:''
+})
 
-const handleConfirm = (e) => {
-    e.preventDefault()
-
-    const userData = {
-        name, phone, email
-    }
-
-    onConfirm(userData)
+const handleOnChange = (event) =>{
+    event.preventDefault()
+    setFormData({
+        ... formData,
+        [event.target.name]: event.target.value
+    })    
 }
+
 
     return(
         <div className="container__fluid formContainer">
-            <form onSubmit={handleConfirm} className="form">
+            <form onSubmit={handleSubmit} className="form">
               <div className="form-outline mb-4">
                     <input 
                       type="text"  
-                      className="form-control" 
-                      value={name}
-                      onChange={({target})=> setName(target.name)} 
+                      className="input" 
+                      value={formData.name}
+                      onChange={handleOnChange} 
                     />
                     <label className="form-label" >Name</label>
               </div>
               <div className="form-outline mb-4">
                    <input 
                      type="text" 
-                     className="form-control" 
-                     value={phone}  
-                     onChange={({target})=> setPhone(target.phone)}
+                     className="input" 
+                     value={formData.phone}  
+                     onChange={handleOnChange}
                    /> 
                    <label className="form-label">Phone</label>
               </div>
               <div className="form-outline mb-4">
                    <input 
                      type="text" 
-                     className="form-control" 
-                     value={email} 
-                     onChange={({target})=> setEmail(target.email)}
+                     className="input" 
+                     value={formData.email} 
+                     onChange={handleOnChange}
                    />
                    <label className="form-label">Email</label>
               </div>

@@ -1,12 +1,19 @@
-.loaderCuenta {
+.closeBillLoader {
     font-size: 1.8em;
     font-weight: 400;
     color: #a3a5af;
+    text-align: center;
     padding: 1em;
 }
 
+.idCompra {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #a3a5af;
+}
+
 .checkoutContainer {
-   
     margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
