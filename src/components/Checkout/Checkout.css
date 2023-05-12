@@ -1,0 +1,23 @@
+.loaderCuenta {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #a3a5af;
+    padding: 1em;
+}
+
+.checkoutContainer {
+   
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #b5b9cf;
+    width: 100%;
+}
+
+.checkoutContainer h2 {
+    margin-top: 1.5em;
+    font-size: 2.5em;
+    font-weight: 600;
+}

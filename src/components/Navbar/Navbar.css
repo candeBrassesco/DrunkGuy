@@ -4,7 +4,7 @@
 }
 
 .navbarLogo {
-    max-height: 17em;
+    max-height: 14em;
     max-width: 100%;
     margin-top: 1.2em;
 }
@@ -21,7 +21,7 @@
     line-height: 2rem;
     color: #FF008A;
     background-color: #34336B;
-    font-size: 2.7rem;
+    font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -34,7 +34,7 @@
     line-height: 2rem;
     color: whitesmoke;
     background-color: #34336B ;
-    font-size: 2.7rem;
+    font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
 }
