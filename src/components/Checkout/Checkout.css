@@ -1,16 +1,9 @@
-.closeBillLoader {
-    font-size: 1.8em;
-    font-weight: 400;
-    color: #a3a5af;
-    text-align: center;
-    padding: 1em;
-}
-
 .idCompra {
     text-align: center;
     font-size: 1.8em;
-    font-weight: 400;
+    font-weight: 600;
     color: #a3a5af;
+    margin-top: 2em;
 }
 
 .checkoutContainer {

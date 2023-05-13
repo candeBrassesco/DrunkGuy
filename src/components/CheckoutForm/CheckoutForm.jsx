@@ -1,56 +1,73 @@
-import { useState } from 'react'
+import { useState } from "react"
 import './CheckoutForm.css'
 
-const CheckoutForm = ( { handleSubmit } ) => {
-const [formData, setFormData] = useState ({
-    name:'',
-    phone:'', 
-    email:''
-})
+const ChecKoutForm = ({onConfirm}) => {
 
-const handleOnChange = (event) =>{
-    event.preventDefault()
-    setFormData({
-        ... formData,
-        [event.target.name]: event.target.value
-    })    
-}
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
 
+    const handleConfirm = (e) => {
+        e.preventDefault()
+
+        const userData = {
+            name, phone, email
+        }
+
+        onConfirm(userData)
+    }
 
     return(
         <div className="container__fluid formContainer">
-            <form onSubmit={handleSubmit} className="form">
-              <div className="form-outline mb-4">
-                    <input 
-                      type="text"  
-                      className="input" 
-                      value={formData.name}
-                      onChange={handleOnChange} 
-                    />
-                    <label className="form-label" >Name</label>
+        <form onSubmit={handleConfirm} className="form">
+          <div className="row">
+              <div className="col-25">
+                  <label className="label">Name</label>
               </div>
-              <div className="form-outline mb-4">
-                   <input 
+              <div className="col-75">
+                  <input 
                      type="text" 
-                     className="input" 
-                     value={formData.phone}  
-                     onChange={handleOnChange}
-                   /> 
-                   <label className="form-label">Phone</label>
+                     value={name}
+                     name="name" 
+                     placeholder="Enter your name"
+                     onChange={({target}) => setName(target.value)}
+                  />
               </div>
-              <div className="form-outline mb-4">
-                   <input 
+          </div>
+          <div className="row">
+              <div className="col-25">
+                  <label className="label">Phone</label>
+              </div>
+              <div className="col-75">
+                  <input 
                      type="text" 
-                     className="input" 
-                     value={formData.email} 
-                     onChange={handleOnChange}
-                   />
-                   <label className="form-label">Email</label>
+                     value={phone} 
+                     name="phone" 
+                     placeholder="Enter your phone"
+                     onChange={({target}) => setPhone(target.value)}
+                  />
               </div>
-              <button type="submit" className="mb-4">Close bill</button>
-            </form>
-        </div>
+          </div>
+          <div className="row">
+              <div className="col-25">
+                  <label className="label" >Email</label>
+              </div>
+              <div className="col-75">
+                  <input 
+                     type="text" 
+                     value={email} 
+                     name="email" 
+                     placeholder="youremail@gmail.com"
+                     onChange={({target}) => setEmail(target.value)}
+                  />
+              </div>
+          </div>
+          <div className="row">
+             <input type="submit" className="closeBill" value="Close bill"/>
+          </div>
+        </form>
+      </div>
     )
 }
 
-export default CheckoutForm
+export default ChecKoutForm
