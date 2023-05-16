@@ -11,3 +11,8 @@ body {
   background-size: cover;
   background-repeat:repeat;
 }
+
+.scrollImg {
+  width: 100%;
+  border-radius: 5px;
+}

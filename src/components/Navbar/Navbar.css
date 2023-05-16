@@ -4,7 +4,7 @@
 }
 
 .navbarLogo {
-    max-height: 14em;
+    max-height: 16em;
     max-width: 100%;
     margin-top: 1.2em;
 }
@@ -42,7 +42,7 @@
 .drinksDropdown {
     background-color: #34336B;
     width: 20em;
-}
+} 
 
 .linkActivado2 {
     text-decoration: none;

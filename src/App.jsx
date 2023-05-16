@@ -5,6 +5,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import {CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer/CartContainer'
 import Checkout from './components/Checkout/Checkout'
+import ScrollToTop from "react-scroll-to-top";
+import scroll from './assets/scroll.png'
 import './App.css'
 
 
@@ -13,6 +15,7 @@ function App() {
     <BrowserRouter>
     <CartContextProvider>
       <div className="App">
+        <ScrollToTop smooth component={<img src={scroll} className=" img-fluid scrollImg"/>} />
         <Navbar />
         <Routes>
           <Route path='/' element={ <ItemListContainer /> } />
