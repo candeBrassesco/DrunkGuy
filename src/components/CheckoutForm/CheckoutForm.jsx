@@ -1,21 +1,11 @@
 import { useState } from "react"
+import { useForm } from "../../hooks/useForm"
 import './CheckoutForm.css'
+
 
 const ChecKoutForm = ({onConfirm}) => {
 
-    const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [email, setEmail] = useState('')
-
-    const handleConfirm = (e) => {
-        e.preventDefault()
-
-        const userData = {
-            name, phone, email
-        }
-
-        onConfirm(userData)
-    }
+    const {name, phone, email, setName, setPhone, setEmail, handleConfirm} = useForm(onConfirm)
 
     return(
         <div className="container__fluid formContainer">
@@ -30,7 +20,7 @@ const ChecKoutForm = ({onConfirm}) => {
                      value={name}
                      name="name" 
                      placeholder="Enter your name"
-                     onChange={({target}) => setName(target.value)}
+                     onChange={({target}) => setName(target.value)}o
                   />
               </div>
           </div>
@@ -46,6 +36,7 @@ const ChecKoutForm = ({onConfirm}) => {
                      placeholder="Enter your phone"
                      onChange={({target}) => setPhone(target.value)}
                   />
+                  {error}
               </div>
           </div>
           <div className="row">
